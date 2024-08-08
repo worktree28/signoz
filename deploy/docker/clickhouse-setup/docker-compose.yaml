@@ -229,16 +229,16 @@ services:
     networks:
       - common
 
-  otel-collector-migrator:
-    image: signoz/signoz-schema-migrator:${OTELCOL_TAG:-0.102.2}
-    container_name: otel-migrator
-    command:
-      - "--dsn=tcp://clickhouse:9000"
-    networks:
-      - common
-    depends_on:
-      clickhouse:
-        condition: service_healthy
+  # otel-collector-migrator:
+    # image: signoz/signoz-schema-migrator:${OTELCOL_TAG:-0.102.2}
+    # container_name: otel-migrator
+    # command:
+    #   - "--dsn=tcp://clickhouse:9000"
+    # networks:
+    #   - common
+    # depends_on:
+    #   clickhouse:
+    #     condition: service_healthy
     
       # clickhouse-2:
       #   condition: service_healthy
